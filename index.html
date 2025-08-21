@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beatriz — Portfolio</title>
+  <meta name="description" content="Portfolio of Beatriz — projects, skills, and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f14; --card:#131922; --muted:#93a2b1; --text:#e7eef7; --accent:#7dd3fc; --accent-2:#22d3ee;
+      --ring:0 0 0 3px rgba(125,211,252,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;background:linear-gradient(180deg,#0b0f14 0%,#0d1219 60%,#0b0f14 100%);color:var(--text);}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(10px);background:rgba(11,15,20,.6);border-bottom:1px solid rgba(255,255,255,.06);z-index:20}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .nav a.logo{font-weight:700;letter-spacing:.4px}
+    .nav .links{display:flex;gap:18px;flex-wrap:wrap}
+    .nav .links a{opacity:.85}
+    .nav .links a:hover{opacity:1}
+
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:64px 0}
+    .badge{display:inline-flex;gap:8px;align-items:center;background:rgba(125,211,252,.12);color:var(--accent);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:600}
+    h1{font-size:42px;line-height:1.12;margin:14px 0 12px}
+    .lead{color:var(--muted);font-size:18px;max-width:60ch}
+    .cta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .btn{border:1px solid rgba(255,255,255,.12);padding:10px 16px;border-radius:12px;background:linear-gradient(180deg,#1a2330,#111827);box-shadow:0 6px 22px rgba(0,0,0,.35);font-weight:600}
+    .btn:hover{box-shadow:0 8px 28px rgba(0,0,0,.45);transform:translateY(-1px)}
+    .btn.primary{border-color:transparent;background:linear-gradient(180deg,var(--accent),var(--accent-2));color:#001016}
+
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px}
+    section{padding:22px 0}
+    h2{font-size:28px;margin:6px 0 14px}
+
+    .grid{display:grid;gap:18px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .grid.cols-3{grid-template-columns:1fr}
+      .grid.cols-2{grid-template-columns:1fr}
+    }
+
+    .tag{font-size:12px;color:var(--muted);border:1px solid rgba(255,255,255,.08);padding:4px 8px;border-radius:999px}
+    .kpis{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px}
+    .kpis .k{background:rgba(255,255,255,.03);padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.06)}
+    .k .n{font-weight:700;font-size:20px}
+    .k .l{color:var(--muted);font-size:12px}
+
+    .project{display:flex;gap:14px}
+    .project img{width:120px;height:80px;border-radius:10px;object-fit:cover;border:1px solid rgba(255,255,255,.08)}
+    .project h3{margin:0 0 6px;font-size:18px}
+    .project p{margin:0;color:var(--muted);font-size:14px}
+
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+
+    footer{padding:42px 0;color:var(--muted);text-align:center}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .focus-ring:focus{outline:none;box-shadow:var(--ring)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#">Beatriz</a>
+      <nav class="links">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <span class="badge">🌱 Early-career developer • Open to internships</span>
+        <h1>Hi, I’m <span style="color:var(--accent)">Beatriz</span>.
+          I build simple, clean, and useful web apps.</h1>
+        <p class="lead">I’m leveling up fast through hands-on projects—focusing on web development, data visualization, and APIs. Here you’ll find my best work, what I’m learning, and how to reach me.</p>
+        <div class="cta">
+          <a class="btn primary focus-ring" href="#projects">See projects</a>
+          <a class="btn focus-ring" href="mailto:you@example.com">Email me</a>
+          <a class="btn focus-ring" href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="kpis">
+          <div class="k"><div class="n" id="k1">0</div><div class="l">Projects shipped</div></div>
+          <div class="k"><div class="n" id="k2">0</div><div class="l">Commits</div></div>
+          <div class="k"><div class="n" id="k3">0</div><div class="l">Skills learned</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">Focus Areas</h3>
+        <ul style="margin:8px 0 0 18px; line-height:1.7">
+          <li>Frontend: HTML, CSS, JavaScript</li>
+          <li>Backend: Node/Express or Python/Flask</li>
+          <li>Databases: PostgreSQL, MongoDB</li>
+          <li>Deployment: GitHub Pages, Render, Vercel</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid cols-2" id="project-list">
+        <!-- Duplicate the .card blocks below to add projects -->
+        <article class="card project">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" alt="Project thumbnail">
+          <div>
+            <h3>TaskFlow — Minimal To‑Do App</h3>
+            <p>CRUD app with localStorage and keyboard shortcuts. Built to practice clean UI and state management.</p>
+            <p style="margin-top:8px"><a href="#" class="tag">Live Demo</a> <a href="#" class="tag">Source</a> <span class="tag">HTML</span> <span class="tag">CSS</span> <span class="tag">JS</span></p>
+          </div>
+        </article>
+
+        <article class="card project">
+          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Project thumbnail">
+          <div>
+            <h3>TrendViz — API Data Dashboard</h3>
+            <p>Fetches a public API and renders charts. Built to learn async/await, fetch, and simple data viz.</p>
+            <p style="margin-top:8px"><a href="#" class="tag">Live Demo</a> <a href="#" class="tag">Source</a> <span class="tag">JS</span> <span class="tag">API</span></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About</h2>
+      <div class="card">
+        <p style="margin:0;color:var(--muted)">I’m a self-taught developer focused on building practical projects and learning in public. I care about clear interfaces, tidy code, and shipping things. I’m currently exploring web apps, APIs, and lightweight backend services.</p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="card">
+        <div class="skills">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Git</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">Python</span>
+          <span class="tag">Node</span>
+          <span class="tag">SQL</span>
+          <span class="tag">APIs</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p style="margin:0 0 10px;color:var(--muted)">Want to chat about an internship or collaboration? Email me or find me on GitHub.</p>
+        <p style="margin:0"><a class="btn focus-ring" href="mailto:you@example.com">you@example.com</a>
+        <a class="btn focus-ring" href="https://github.com/your-username" target="_blank" rel="noopener">github.com/your-username</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Beatriz • Built with vanilla HTML/CSS/JS • Deployed on GitHub Pages</div>
+  </footer>
+
+  <script>
+    // Simple counters you can edit manually as you grow
+    const stats = { projects: 2, commits: 42, skills: 9 };
+    document.getElementById('k1').textContent = stats.projects;
+    document.getElementById('k2').textContent = stats.commits;
+    document.getElementById('k3').textContent = stats.skills;
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
