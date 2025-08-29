@@ -74,15 +74,20 @@
       .grid.cols-2{grid-template-columns:1fr}
     }
 
-    @media (max-width:600px) {
-      .container{padding:16px}
-      .nav .links{gap:12px;flex-wrap:wrap}
-      .hero{padding:40px 0}
-      .project{flex-direction:column}
-      .project img{width:100%;height:auto}
-      .lead{font-size:16px}
+     @media (max-width:600px){
+      /* Nav: logo on row 1, links on row 2 */
+      .nav{ flex-wrap: wrap; row-gap: 8px; }
+      .logo{ white-space: nowrap; font-size: clamp(20px, 5vw, 26px); }
+      .nav .links{ flex-basis: 100%; gap: 12px; flex-wrap: wrap; }
+      .nav .links a{ font-size: 16px; }
+    
+      /* Existing mobile tweaks */
+      .container{ padding:16px; }
+      .hero{ padding:40px 0; }
+      .project{ flex-direction:column; }
+      .project img{ width:100%; height:auto; }
+      .lead{ font-size:16px; }
     }
-
     /* Nav site title */
     .logo{
       font-family:"Space Grotesk", Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -126,15 +131,6 @@
       display: inline-flex;
       width: auto;
       margin: 0 12px 12px 0;          /* row & column spacing on desktop wrap */
-    }
-    
-    @media (max-width: 600px){
-      #contact .card .btn{
-        display: block;
-        width: 100%;
-        margin: 0 0 12px 0;           /* vertical spacing between stacked buttons */
-      }
-      #contact .card .btn:last-child{ margin-bottom: 0; }
     }
 
   </style>
