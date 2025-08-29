@@ -133,6 +133,54 @@
       margin: 0 12px 12px 0;          /* row & column spacing on desktop wrap */
     }
 
+
+    /* About style */
+    /* Gradient text utility (reuse your accent gradient) */
+    .gradient-text{
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    /* About section highlight */
+    #about .card{
+      background: rgba(255,255,255,.02);         /* subtle lift from background */
+      border-left: 4px solid var(--accent);      /* accent bar */
+      border-radius: 16px;
+      padding: 18px 18px 18px 16px;              /* a little tighter on the left */
+      box-shadow: 0 8px 30px rgba(0,0,0,.25);    /* soft glow */
+    }
+    
+    /* Typography inside About */
+    #about p{
+      margin: 0;
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+    #about p em, #about p strong{ color: var(--accent); font-weight: 600; }
+    
+    /* Optional layout if you add a photo later */
+    #about .about-grid{
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;         /* photo | text */
+      gap: 18px;
+      align-items: center;
+    }
+    #about .about-photo{
+      width: 120px; height: 120px; border-radius: 16px;
+      object-fit: cover; border:1px solid rgba(255,255,255,.08);
+      box-shadow: 0 6px 22px rgba(0,0,0,.35);
+    }
+    
+    /* Phones: stack photo above text */
+    @media (max-width:600px){
+      #about .about-grid{ grid-template-columns: 1fr; }
+      #about .about-photo{ margin-bottom: 8px; }
+    }
+
+    
   </style>
 </head>
 <body>
@@ -156,7 +204,7 @@
         <span class="badge">🌱 Early-career developer • Open to internships</span>
         <h1>Hi, I’m <span style="color:var(--accent)">Jonathan Navarro</span>.
           I build simple, clean, and useful web apps.</h1>
-        <p class="lead">I’m leveling up fast through hands-on projects—focusing on web development, data visualization, and APIs. Here you’ll find my best work, what I’m learning, and how to reach me.</p>
+        <p class="lead">I’m leveling up fast through hands-on projects-focusing on web development, data visualization, and APIs. Here you’ll find my best work, what I’m learning, and how to reach me.</p>
         <div class="cta">
           <a class="btn primary focus-ring" href="#projects">See projects</a>
           <a class="btn focus-ring" href="mailto:jnavarror27@gmail.com">Email me</a>
@@ -212,7 +260,9 @@
     <section id="about">
       <h2>About</h2>
       <div class="card">
-        <p style="margin:0;color:var(--muted)">I’m a Computer Science first year student from San Juan, PR studying at Georgia Tech in Atlanta. I plan to dive into AI, and I'm interested in startups. Past work includes a rainfall-prediction model built from Puerto Rico station data and this personal website serves as my first GitHub project. I’m bilingual (English/Spanish) and open to internships during the summer.</p>
+        <p style="margin:0;color:var(--muted)">I’m a first-year Computer Science student at <strong>Georgia Tech</strong>, originally from San Juan, PR. My interests lie in AI and startups, and I’m building a strong foundation in web development through hands-on projects.
+Past work includes a rainfall-prediction model built from Puerto Rico station data and created this personal portfolio as my first GitHub project.
+I’m bilingual (English/Spanish) and actively seeking <strong>summer internships</strong> where I can apply my skills and grow alongside a team.</p>
       </div>
     </section>
 
