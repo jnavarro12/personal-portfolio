@@ -60,7 +60,36 @@
       border:1px solid rgba(255,255,255,.10);
       box-shadow: inset 0 0 0 1px rgba(255,255,255,.04);
       white-space: nowrap;     /* keep each chip on one line */
+      margin: 4px;  
     }
+
+    .tag.link {
+      cursor: pointer;
+      color: var(--accent);
+      border-color: var(--accent);
+      transition: all 0.2s ease-in-out;
+      padding-right: 24px; /* make room for icon */
+    }
+
+    .tag.link::after {
+      content: "↗";              /* external link symbol */
+      font-size: 12px;
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.7;
+    }
+    
+    .tag.link:hover {
+      background: var(--accent);
+      color: #001016;  /* dark text for contrast */
+    }
+
+    .tag.link:hover::after {
+      opacity: 1;
+    }
+
     .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px}
     section{padding:22px 0}
     h2{font-size: clamp(20px, 3.5vw, 28px); margin:6px 0 14px}
@@ -238,7 +267,7 @@
           <div>
             <h3>Precipitation Prediction with 1D Convolutional Neural Network</h3>
             <p>Built and trained a CNN using rainfall station data to predict rain volume in Puerto Rico.</p>
-            <p style="margin-top:8px"><span class="tag"> Pandas </span> <span class="tag">NumPy</span> <span class="tag">scikit-learn</span> <span class="tag">matplotlib</span> <a href="https://colab.research.google.com/drive/1OqO0WQBN5VN_w609pn632hTsAV-NMqma?usp=sharing" target="_blank" rel="noopener" class="tag"> Google Colab Doc</a></p>
+            <p style="margin-top:8px"><span class="tag"> Pandas </span> <span class="tag">NumPy</span> <span class="tag">scikit-learn</span> <span class="tag">matplotlib</span> <a href="https://colab.research.google.com/drive/1OqO0WQBN5VN_w609pn632hTsAV-NMqma?usp=sharing" target="_blank" rel="noopener" class="tag link"> Google Colab Doc</a></p>
           </div>
         </article>
         <!--
