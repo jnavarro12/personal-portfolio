@@ -79,12 +79,29 @@
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     .focus-ring:focus{outline:none;box-shadow:var(--ring)}
 
-    #contact .card{ display:flex; flex-direction:column; gap:12px; }
-    #contact .card .btn{
-      display:block;
-      width:100%;
-      position:static;     
-      transform:none;  
+    /* Desktop/tablet: inline pills with wrapping */
+    #contact .card { 
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    #contact .card .btn {
+      display: inline-flex;
+      width: auto;           /* <-- not full width on desktop */
+    }
+
+    /* Phones: stack full-width buttons */
+    @media (max-width: 600px){
+      #contact .card{
+        flex-direction: column;
+        gap: 12px;
+      }
+      #contact .card .btn{
+        display: block;
+        width: 100%;         /* <-- only on small screens */
+      }
+    }
+
 }
   </style>
 </head>
