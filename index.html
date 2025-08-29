@@ -91,22 +91,32 @@
     .focus-ring:focus{outline:none;box-shadow:var(--ring)}
 
     /* Desktop/tablet: inline pills with wrapping */
+    /* Desktop/tablet: paragraph + inline pills (no extra gap above first button) */
     #contact .card { 
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      display: block;                    /* no flex, so the paragraph isn't affected */
+    }
+    #contact .card p { 
+      margin: 0 0 10px;                  /* small space under the paragraph only */
     }
     #contact .card .btn {
-      display: inline-flex;
-      width: auto;           /* <-- not full width on desktop */
+      display: inline-flex; 
+      width: auto; 
+      margin-right: 12px;                /* horizontal space between buttons */
+    }
+    #contact .card .btn:last-child { margin-right: 0; }
+    
+    /* Phones: stack full-width with vertical spacing between buttons only */
+    @media (max-width: 600px){
+      #contact .card .btn{
+        display: block;
+        width: 100%;
+        margin: 0;                       /* reset */
+      }
+      #contact .card .btn + .btn{ 
+        margin-top: 12px;                /* vertical space between stacked buttons */
+      }
     }
 
-    /* Phones: stack full-width buttons */
-    @media (max-width: 600px){
-      #contact .card{
-        flex-direction: column;
-        gap: 20px;
-      }
       #contact .card .btn{
         display: block;
         width: 100%;         /* <-- only on small screens */
