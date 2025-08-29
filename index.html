@@ -92,35 +92,26 @@
 
     /* Desktop/tablet: inline pills with wrapping */
     /* Desktop/tablet: paragraph + inline pills (no extra gap above first button) */
+    /* Contact card — tidy on desktop, stacked on phones */
     #contact .card { 
-      display: block;                    /* no flex, so the paragraph isn't affected */
+      display: block;                 /* paragraph not affected by flex/gap */
     }
     #contact .card p { 
-      margin: 0 0 10px;                  /* small space under the paragraph only */
+      margin: 0 0 10px;               /* small space under the message */
     }
-    #contact .card .btn {
-      display: inline-flex; 
-      width: auto; 
-      margin-right: 12px;                /* horizontal space between buttons */
+    #contact .card .btn{
+      display: inline-flex;
+      width: auto;
+      margin: 0 12px 12px 0;          /* row & column spacing on desktop wrap */
     }
-    #contact .card .btn:last-child { margin-right: 0; }
     
-    /* Phones: stack full-width with vertical spacing between buttons only */
     @media (max-width: 600px){
       #contact .card .btn{
         display: block;
         width: 100%;
-        margin: 0;                       /* reset */
+        margin: 0 0 12px 0;           /* vertical spacing between stacked buttons */
       }
-      #contact .card .btn + .btn{ 
-        margin-top: 12px;                /* vertical space between stacked buttons */
-      }
-    }
-
-      #contact .card .btn{
-        display: block;
-        width: 100%;         /* <-- only on small screens */
-      }
+      #contact .card .btn:last-child{ margin-bottom: 0; }
     }
 
 }
